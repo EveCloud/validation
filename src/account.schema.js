@@ -1,9 +1,7 @@
 const { object, string, number, boolean } = require('yup')
 
 module.exports = AccountSchema = object({
-  _id: string(),
-  uuid: string(),
-  username: string()
+  username: string('Must be a string')
     .min(3, 'Username must be between 3 and 32 characters.')
     .max(32, 'Username must be between 3 and 32 characters.'),
   email: string().email('Must be a valid email address.'),
@@ -13,7 +11,7 @@ module.exports = AccountSchema = object({
   first_name: string().max(50, 'First name must be 50 characters or less.'),
   last_name: string().max(50, 'Last name must be 50 characters or less.'),
   company: string().max(128, 'Company must be 128 characters or less.'),
-  phone: string().max(32, 'Phone number must be 32 characters or less.'),
+  phone_number: string().max(32, 'Phone number must be 32 characters or less.'),
   address: string()
     .min(3, 'Address must be between 3 and 64 characters.')
     .max(64, 'Address must be between 3 and 64 characters.'),
