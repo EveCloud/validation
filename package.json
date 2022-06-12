@@ -1,0 +1,22 @@
+{
+  "name": "@evecloud/validation",
+  "version": "1.0.0",
+  "description": "Yup validation schemas for EveCloud API",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EveCloud/validation.git"
+  },
+  "author": "EveCloud",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EveCloud/validation/issues"
+  },
+  "homepage": "https://github.com/EveCloud/validation#readme",
+  "dependencies": {
+    "yup": "^0.32.9"
+  }
+}
