@@ -1,7 +1,7 @@
 const { object, string, number, boolean } = require('yup')
 
-module.exports = AccountSchema = object({
-  username: string('Must be a string')
+module.exports = updateAccountSchema = object({
+  username: string()
     .min(3, 'Username must be between 3 and 32 characters.')
     .max(32, 'Username must be between 3 and 32 characters.'),
   email: string().email('Must be a valid email address.'),
@@ -30,4 +30,16 @@ module.exports = AccountSchema = object({
   tax_id: string()
     .min(3, 'Tax ID must be between 3 and 100 characters.')
     .max(100, 'Tax ID must be between 3 and 100 characters.'),
+});
+
+module.exports = createAccountSchema = object({
+  username: string().required('Username is required.')
+    .min(3, 'Username must be between 3 and 32 characters.')
+    .max(32, 'Username must be between 3 and 32 characters.'),
+  email: string().email('Must be a valid email address.').required('Email is required.'),
+  password: string()
+    .min(8, 'Password must be at least 8 characters.')
+    .max(32, 'Password must be at most 32 characters.')
+    .required('Password is required.'),
+  agreement: boolean().required('Agreement is required.'),
 });
